@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
+import Loader from "react-loader-spinner";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready : false });
@@ -60,6 +61,6 @@ function handleCityChange(event) {
     );
 } else {
     search();
-     return "Loading...";
+     return <Loader type="Bars" color="#00BFFF" height={80} width={80} />;
   }
 }
