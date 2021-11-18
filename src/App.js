@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <div className="container">
       <h1>React weather project</h1>
-      <Weather defaultCity="New York" />
+      <Weather defaultCity="Berlin" />
       <footer>
          This project was coded by Maria Garcia {""}
          <a href="https://github.com/mariasalud/react-weather-pro" target="_blank" rel="noreferrer">

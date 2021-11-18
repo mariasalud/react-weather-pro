@@ -6,7 +6,7 @@ export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready : false });
     function handleResponse(response) {
      setWeatherData({
-           ready:true,
+          ready:true,
           temperature: response.data.main.temp,
           humidity: response.data.main.humidity,
           date: "Wednesday 01:08",
@@ -67,7 +67,6 @@ export default function Weather(props) {
     );
 } else {
     const apikey = "77d7aad521d071522cc04f7e20b8ab63";
-    let city = "New York"
     let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apikey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
