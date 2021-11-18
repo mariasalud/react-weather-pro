@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready : false });
     function handleResponse(response) {
-     setWeatherData({
+      setWeatherData({
           ready:true,
           temperature: response.data.main.temp,
           humidity: response.data.main.humidity,
-          date: "Wednesday 01:08",
+          date: new Date(response.data.dt * 1000),
           description: response.data.weather[0].description,
           iconUrl: "https://th.bing.com/th?q=Sun+Weather+Icon&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247",
           wind: response.data.wind.speed,
@@ -37,7 +38,9 @@ export default function Weather(props) {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-            <li>{weatherData.date} </li>
+            <li>
+              <FormattedDate date={weatherData.date} />
+              </li>
             <li className="text-capitalize">{weatherData.description} </li>
         </ul>
            <div className="row mt-3">
