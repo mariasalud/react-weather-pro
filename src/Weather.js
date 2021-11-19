@@ -14,7 +14,7 @@ export default function Weather(props) {
           humidity: response.data.main.humidity,
           date: new Date(response.data.dt * 1000),
           description: response.data.weather[0].description,
-          iconUrl: "https://th.bing.com/th?q=Sun+Weather+Icon&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247",
+          iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
           wind: response.data.wind.speed,
           city: response.data.name
        });
