@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForcast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
 import Loader from "react-loader-spinner";
@@ -56,7 +57,7 @@ function handleCityChange(event) {
             </div>
         </form>
         <WeatherInfo data={weatherData} />
-      
+       <WeatherForcast />
       </div>
     );
 } else {
