@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
-import WeatherForcast from "./WeatherForecast";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
 import Loader from "react-loader-spinner";
+
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready : false });
@@ -58,7 +59,7 @@ function handleCityChange(event) {
             </div>
         </form>
         <WeatherInfo data={weatherData} />
-       <WeatherForcast coordinates={weatherData.coordinates} />
+       <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
 } else {
