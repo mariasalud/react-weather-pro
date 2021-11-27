@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import WeatherIcon from "./WeatherIcon";
+
 import "./WeatherForecast.css";
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
@@ -28,7 +28,7 @@ export default function WeatherForecast(props) {
            return (
              <div className="col" key={index}>
               <WeatherForecastDay data={dailyForecast} />
-             </div>
+              </div>
            );
            } else {
              return null;
